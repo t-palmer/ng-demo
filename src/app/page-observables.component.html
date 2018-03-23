@@ -1,0 +1,40 @@
+<h1>Observables</h1>
+<p>For more information about Observables please see the <a href="http://reactivex.io/rxjs/manual/">RxJS manual</a>.</p>
+<p>The ReactiveX page mentions rxjs-es. This is the old version of RxJS ie version 4. Version 5 is the current version.</p>
+
+<p>At this time the current version is 5.5.0. But, it appears to have a bug in finding operators.js. So for now use 5.4.3.</p>
+<h2>Multiple values</h2>
+<p><a (click)="multiValue()">Click</a> to subscribe to the Observable.</p>
+{{multiValueResult}}
+
+<h2>Observables with HTTP</h2>
+JSON result:
+    <pre>{{resultJson | json}}</pre>
+
+<p><a (click)="httpGet()">Click</a> to call HTTP with an Observable.</p>
+
+<h3>subscribe()</h3>
+<p>Note that even though <code>httpGet()</code> appears in the function and we have the Observable,
+    it doesn't get invoked until we call <code>subscribe()</code>.
+</p>
+<p><a (click)="httpGetObservable()">Click</a> to get the Observable.</p>
+<p><a (click)="httpSubscribe()">Click</a> to subscribe and get the result.</p>
+
+<h3>map()</h3>
+
+<p><a (click)="httpGetElement()">Click</a> to get the items array element from the json.</p>
+<p><a (click)="httpGetArray()">Click</a> to map each item in the array to a new object.</p>
+
+
+<h1>HTTP</h1>
+<p>When importing HttpClientModule you may get the following error:</p>
+Error: Fetch error: 404 Not Found
+<br/>
+Instantiating http://localhost:3000/tslib
+<br/>
+Loading http://localhost:3000/node_modules/@angular/common/bundles/common-http.umd.js
+<br>
+<p>You need to add BOTH the following to your systemjs.config.js file.</p>
+'tslib': 'npm:tslib/tslib.js',
+<br>
+'@angular/common/http': 'npm:@angular/common/bundles/common-http.umd.js',

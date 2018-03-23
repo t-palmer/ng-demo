@@ -1,0 +1,13 @@
+<h1>this</h1>
+<p>One of the difficulties of JavaScript is that it is so easy to lose track of "this".</p>
+
+
+<h2>Watch out for <code>this</code></h2>
+<p>Be very careful when you use this inside your callback functions. It will not be your component's <code>this</code>.</p>
+
+<p>Note that "this" is treated differently in arrow functions versus function objects</p>
+<p><a (click)="thisTest()">Click</a> to test <code>this</code> as a function callback.</p>
+
+<p><a (click)="thisParameterTest()">Click</a> to test <code>this</code> as a parameter function.</p>
+
+<p><a (click)="thisArrowTest()">Click</a> to test <code>this</code> in an arrow function.</p>
